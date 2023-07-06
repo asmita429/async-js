@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+        <h1>First person in the array</h1>
+        <h4 id="name">Name</h4>
+        <h4 id="number">ID</h4>
+        <h4 id="price">price</h4>
+        <img id="myImg" src="" alt="Image:" srcset="" >
+        <h4 id="color">color</h4>
+        <h4 id="des">description</h4>
+        <h4 id="cat">category</h4>
+        <h4 id="shipping">shipping</h4>
+
+        
+    <script>
+
+    function processData(data){
+        console.log(data[0]);
+        var obj1 = data[0];
+        
+        const name = document.getElementById("name");
+        name.innerHTML = obj1.name;
+
+        const id = document.getElementById("number");
+        id.innerHTML = obj1.id;
+
+        const price = document.getElementById("price");
+        price.innerHTML = obj1.price;
+
+        const image = document.getElementById("myImg");
+        image.innerHTML = obj1.image;
+
+        const color = document.getElementById("color");
+        color.innerHTML = obj1.colors;
+        // colorElement.style.color = data[0].colors;
+
+        const description = document.getElementById("des");
+        description.innerHTML = obj1.description;
+
+        const category = document.getElementById("cat");
+        category.innerHTML = obj1.category;
+
+        const shipping = document.getElementById("shipping");
+        shipping.innerHTML = obj1.shipping;
+
+    }
+
+    const DEMO_URL = "https://course-api.com/react-store-products";
+    const request = fetch(DEMO_URL)
+    .then(response => {
+        console.log(response);
+        return response.json();
+    })
+    // .then((data) => console.log(data))
+    .then(processData)
+    .catch((error) => {
+        console.log("error:", error);
+    });
+     
+    console.log(request);
+    </script>
+</body>
+</html>

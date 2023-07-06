@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+     <script> 
+        const promise = new Promise((resolve,reject) => {
+            setTimeout(() => {
+                resolve("Successful");
+                reject("Rejected");
+            },5000);
+        });
+        
+        promise.then((sumNatural) => {
+            var sum = 0;
+            for(var i = 1; i<= 4; i++){
+                sum = sum + i;
+            }
+            console.log(sum);
+        }
+        ).catch((error) => {
+            console.log("Error:", error);
+        }); 
+
+
+        //async/await
+
+        // async function myDisplay() {
+        //     let myPromise = new Promise(function(resolve, reject) {
+        //         resolve((sumNaturalNumber) => {
+        //             var sum = 0;
+        //             for(var i = 1; i <=4; i++){
+        //                 sum += i;
+        //             }
+        //             console.log(sum);
+        //         });
+        //     });
+        //     var value = await myPromise;
+        //     console.log(value);
+        // }
+
+        // async function myDisplay() {
+        // let myPromise = new Promise(function(resolve, reject) {
+        // resolve(num);
+        // });
+        // var value = await myPromise;
+        //     console.log(value);
+        // }
+
+        // myDisplay();
+        myDisplay();
+        </script>
+</body>
+</html>
